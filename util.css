@@ -294,6 +294,7 @@ h1, h2, h3 { letter-spacing: -.045em; }
 .menu-toggle svg,
 .mobile-menu__close svg { width: 21px; height: 21px; }
 .mobile-menu {
+  display: none;
   position: fixed;
   z-index: 1100;
   inset: 0;
@@ -309,6 +310,7 @@ h1, h2, h3 { letter-spacing: -.045em; }
   color: white;
   background: var(--night);
 }
+.mobile-menu[open] { display: block; }
 .mobile-menu::backdrop { background: var(--night); }
 .mobile-menu__close { position: absolute; top: 15px; right: max(20px, calc((100% - 1180px) / 2)); }
 .mobile-menu__inner {

@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const main = $('#main-content');
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobileQuery = window.matchMedia('(max-width: 900px)');
+  const onMediaQueryChange = (query, listener) => {
+    if (typeof query.addEventListener === 'function') {
+      query.addEventListener('change', listener);
+    } else if (typeof query.addListener === 'function') {
+      query.addListener(listener);
+    }
+  };
   let toastTimer;
   let copyTimer;
   let menuIsOpen = false;
@@ -156,15 +163,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target === mobileMenu) setMenu(false);
   });
 
+  const focusDestination = (target) => {
+    if (!target) return;
+    const focusableSelector = 'a[href], button, input, select, textarea, [tabindex]';
+    const destination = target.matches(focusableSelector)
+      ? target
+      : target.querySelector('h1, h2, h3') || target;
+
+    if (!destination.matches(focusableSelector)) {
+      destination.setAttribute('tabindex', '-1');
+    }
+    destination.focus({ preventScroll: true });
+  };
+
   $$('#mobileMenu a[href^="#"]').forEach((link) => {
     link.addEventListener('click', () => {
       const target = document.querySelector(link.hash);
       setMenu(false, false);
-      window.requestAnimationFrame(() => target?.focus({ preventScroll: true }));
+      window.requestAnimationFrame(() => focusDestination(target));
     });
   });
 
-  mobileQuery.addEventListener('change', (event) => {
+  onMediaQueryChange(mobileQuery, (event) => {
     if (!event.matches && menuIsOpen) setMenu(false, false);
   });
 
@@ -187,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (link.closest('#mobileMenu') || link.classList.contains('skip-link')) return;
     link.addEventListener('click', () => {
       const target = document.querySelector(link.hash);
-      window.requestAnimationFrame(() => target?.focus({ preventScroll: true }));
+      window.requestAnimationFrame(() => focusDestination(target));
     });
   });
 
@@ -272,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   scheduleRoleChange();
 
-  motionQuery.addEventListener('change', () => {
+  onMediaQueryChange(motionQuery, () => {
     if (motionQuery.matches && typingElement) {
       window.clearTimeout(roleTimer);
       typingElement.classList.remove('is-changing');

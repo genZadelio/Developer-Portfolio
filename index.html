@@ -30,10 +30,10 @@
   <title>Adelio Ghosh — AI/ML & Software Developer Portfolio</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="fonts.css?v=20261127">
   <link rel="preload" href="image.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="util.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="util.css?v=20261127">
+  <script src="script.js?v=20261127" defer></script>
 
   <script type="application/ld+json">
     {
@@ -57,7 +57,6 @@
         { "@type": "CreativeWork", "name": "AI Tic Tac Toe", "url": "https://github.com/genZadelio/AI-Tic-Tac-Toe" },
         { "@type": "CreativeWork", "name": "Personal Password Manager", "url": "https://github.com/genZadelio/Personal-Password-Manager" },
         { "@type": "CreativeWork", "name": "Banking Management System", "url": "https://github.com/genZadelio/Banking-Management-System" },
-        { "@type": "CreativeWork", "name": "Amazon Clone", "url": "https://github.com/genZadelio/Amazon-Clone" },
         { "@type": "CreativeWork", "name": "JS Chatbot", "url": "https://github.com/genZadelio/JS-Chatbot" }
       ]
     }
@@ -210,7 +209,7 @@
           <span class="hero-fact__label">Selected projects</span>
         </a>
         <a class="hero-fact reveal" href="#projects">
-          <span class="hero-fact__value">04</span>
+          <span class="hero-fact__value">05</span>
           <span class="hero-fact__label">Live browser demos</span>
         </a>
         <a class="hero-fact reveal" href="#skills">
@@ -340,7 +339,7 @@
       </div>
 
       <div class="container work-list">
-        <article class="work-case reveal" id="laserpay" data-work-case="laserpay">
+        <article class="work-case reveal" id="laserpay" data-work-case="laserpay" tabindex="-1" aria-labelledby="laserpayTitle">
           <div class="work-case__visual">
             <span class="visual-note">Conceptual preview</span>
             <div class="case-window case-window--laserpay" aria-hidden="true">
@@ -357,7 +356,7 @@
           </div>
           <div class="work-case__copy">
             <div class="case-meta"><span>01 / 04</span><span>EDUCATIONAL UI DEMO</span><span>2026</span></div>
-            <h3>Laserpay</h3>
+            <h3 id="laserpayTitle">Laserpay</h3>
             <p class="case-lead">An educational finance-platform interface demo for payments, payouts, banking, payroll, and developer workflows.</p>
             <dl class="case-details">
               <div><dt>Scope</dt><dd>Responsive multi-product interface with interactive workflows, code showcase, FAQ, and disclosure-safe demo dialogs.</dd></div>
@@ -372,7 +371,7 @@
           </div>
         </article>
 
-        <article class="work-case work-case--reverse reveal" id="everdrift" data-work-case="everdrift">
+        <article class="work-case work-case--reverse reveal" id="everdrift" data-work-case="everdrift" tabindex="-1" aria-labelledby="everdriftTitle">
           <div class="work-case__visual">
             <span class="visual-note">Conceptual preview</span>
             <div class="case-window case-window--everdrift" aria-hidden="true">
@@ -386,7 +385,7 @@
           </div>
           <div class="work-case__copy">
             <div class="case-meta"><span>02 / 04</span><span>PERSONAL PROJECT</span><span>2026</span></div>
-            <h3>Everdrift</h3>
+            <h3 id="everdriftTitle">Everdrift</h3>
             <p class="case-lead">A dependency-free endless browser game set in an ever-scaling procedural space field.</p>
             <dl class="case-details">
               <div><dt>Scope</dt><dd>Collectible chaining, phase charges, generated sound, responsive touch controls, persistent personal best, and an installable offline PWA.</dd></div>
@@ -401,7 +400,7 @@
           </div>
         </article>
 
-        <article class="work-case reveal" id="flopcart" data-work-case="flopcart">
+        <article class="work-case reveal" id="flopcart" data-work-case="flopcart" tabindex="-1" aria-labelledby="flopcartTitle">
           <div class="work-case__visual">
             <span class="visual-note">Conceptual preview</span>
             <div class="case-window case-window--flopcart" aria-hidden="true">
@@ -415,7 +414,7 @@
           </div>
           <div class="work-case__copy">
             <div class="case-meta"><span>03 / 04</span><span>EDUCATIONAL UI DEMO</span><span>2026</span></div>
-            <h3>Flopcart</h3>
+            <h3 id="flopcartTitle">Flopcart</h3>
             <p class="case-lead">An educational storefront interface demo exploring familiar marketplace UX patterns with browser-only state.</p>
             <dl class="case-details">
               <div><dt>Scope</dt><dd>Search, category filtering, wishlist, a local cart with quantity controls, hero carousel, responsive catalog, and toast feedback.</dd></div>
@@ -430,7 +429,7 @@
           </div>
         </article>
 
-        <article class="work-case work-case--reverse reveal" id="gamazon" data-work-case="gamazon">
+        <article class="work-case work-case--reverse reveal" id="gamazon" data-work-case="gamazon" tabindex="-1" aria-labelledby="gamazonTitle">
           <div class="work-case__visual">
             <span class="visual-note">Conceptual preview</span>
             <div class="case-window case-window--gamazon" aria-hidden="true">
@@ -444,7 +443,7 @@
           </div>
           <div class="work-case__copy">
             <div class="case-meta"><span>04 / 04</span><span>EDUCATIONAL UI DEMO</span><span>2026</span></div>
-            <h3>Gamazon</h3>
+            <h3 id="gamazonTitle">Gamazon</h3>
             <p class="case-lead">An original educational storefront interface with fictional sample data and zero affiliation to any marketplace brand.</p>
             <dl class="case-details">
               <div><dt>Scope</dt><dd>Responsive banner and hero, original SVG category illustrations, browser-only search, category filtering, and disclosure-focused content.</dd></div>
@@ -530,13 +529,13 @@
           <article class="archive-item reveal" data-project-category="interface">
             <div class="archive-item__index">08</div>
             <div class="archive-item__main">
-              <span class="archive-item__type">HTML5 · CSS3 · RESPONSIVE UI</span>
-              <h3>Amazon Clone</h3>
-              <p>A responsive storefront interface demonstrating sticky navigation, a structured product grid, and modern visual hierarchy.</p>
+              <span class="archive-item__type">HTML5 · CSS3 · EARLIER STOREFRONT</span>
+              <h3>Formerly Amazon Clone</h3>
+              <p>The earlier project name for the storefront now presented as Gamazon, demonstrating a responsive product grid, sticky navigation, and modern visual hierarchy.</p>
               <div class="archive-item__tags"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
             </div>
             <div class="archive-item__action">
-              <a href="https://github.com/genZadelio/Amazon-Clone" target="_blank" rel="noopener noreferrer" aria-label="View Amazon Clone source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <a href="https://github.com/genZadelio/Gamazon" target="_blank" rel="noopener noreferrer" aria-label="View Gamazon (formerly Amazon Clone) source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
             </div>
           </article>
 
@@ -605,7 +604,7 @@
             <p>For any query, collaboration opportunity, or thoughtful conversation about technology, my inbox is open.</p>
             <div class="contact-actions">
               <a class="contact-mail" href="mailto:adelioghosh@gmail.com">adelioghosh@gmail.com <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
-              <button class="copy-email" type="button" data-copy-email="adelioghosh@gmail.com" aria-label="Copy email address">Copy email</button>
+              <button class="copy-email" type="button" data-copy-email="adelioghosh@gmail.com">Copy email</button>
             </div>
             <ul class="collaboration-tags" aria-label="Collaboration areas">
               <li>AI / ML prototypes</li><li>Frontend systems</li><li>Browser experiences</li>
