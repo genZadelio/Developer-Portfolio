@@ -2,6 +2,8 @@ const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.remove('no-js');
+
   const header = $('#siteHeader');
   const progress = $('#scrollProgress');
   const backToTop = $('#backToTop');
@@ -9,44 +11,185 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = $('.menu-toggle');
   const menuClose = $('.mobile-menu__close');
   const toast = $('#toast');
+  const copyStatus = $('#copyStatus');
+  const main = $('#main-content');
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
   let toastTimer;
+  let copyTimer;
+  let menuIsOpen = false;
 
-  // Compact header, reading progress, and back-to-top control.
-  const updateScrollUI = () => {
+  const menuBackground = [$('.skip-link'), $('.nav-shell'), main, $('.site-footer'), backToTop]
+    .filter(Boolean);
+
+  const setBackgroundInert = (inert) => {
+    menuBackground.forEach((element) => {
+      if (inert) element.setAttribute('inert', '');
+      else element.removeAttribute('inert');
+    });
+  };
+
+  // Compact header, compositor-friendly progress, and back-to-top control.
+  let scrollRange = 1;
+  let scrollFramePending = false;
+
+  const measureScrollRange = () => {
+    scrollRange = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  };
+
+  const paintScrollUI = () => {
     const scrollTop = window.scrollY;
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     header?.classList.toggle('is-scrolled', scrollTop > 18);
     backToTop?.classList.toggle('is-visible', scrollTop > 700);
 
     if (progress) {
-      const ratio = scrollable > 0 ? Math.min(scrollTop / scrollable, 1) : 0;
-      progress.style.width = `${ratio * 100}%`;
+      const ratio = Math.min(Math.max(scrollTop / scrollRange, 0), 1);
+      progress.style.transform = `scaleX(${ratio})`;
+    }
+
+    scrollFramePending = false;
+  };
+
+  const requestScrollPaint = () => {
+    if (scrollFramePending) return;
+    scrollFramePending = true;
+    window.requestAnimationFrame(paintScrollUI);
+  };
+
+  measureScrollRange();
+  paintScrollUI();
+  window.addEventListener('scroll', requestScrollPaint, { passive: true });
+  window.addEventListener('resize', measureScrollRange, { passive: true });
+
+  if ('ResizeObserver' in window && main) {
+    const resizeObserver = new ResizeObserver(measureScrollRange);
+    resizeObserver.observe(main);
+  }
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: motionQuery.matches ? 'auto' : 'smooth' });
+    $('#home')?.focus({ preventScroll: true });
+  });
+
+  // Accessible modal navigation. Native dialog semantics provide focus containment.
+  const setMenu = (open, restoreFocus = true) => {
+    if (!mobileMenu || !menuToggle) return;
+
+    if (open && !menuIsOpen) {
+      menuIsOpen = true;
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Close navigation');
+      document.body.classList.add('menu-open');
+      setBackgroundInert(true);
+
+      if (typeof mobileMenu.showModal === 'function') {
+        mobileMenu.showModal();
+      } else {
+        mobileMenu.setAttribute('open', '');
+      }
+
+      window.requestAnimationFrame(() => menuClose?.focus());
+      return;
+    }
+
+    if (!open && menuIsOpen) {
+      menuIsOpen = false;
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation');
+      document.body.classList.remove('menu-open');
+      setBackgroundInert(false);
+
+      if (mobileMenu.open && typeof mobileMenu.close === 'function') {
+        mobileMenu.close();
+      } else {
+        mobileMenu.removeAttribute('open');
+      }
+
+      if (restoreFocus) menuToggle.focus();
     }
   };
 
-  updateScrollUI();
-  window.addEventListener('scroll', updateScrollUI, { passive: true });
-  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  menuToggle?.addEventListener('click', () => setMenu(!menuIsOpen));
+  menuClose?.addEventListener('click', () => setMenu(false));
 
-  // Accessible mobile navigation.
-  const setMenu = (open) => {
-    if (!mobileMenu || !menuToggle) return;
-    mobileMenu.classList.toggle('is-open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    document.body.classList.toggle('menu-open', open);
-  };
+  mobileMenu?.addEventListener('close', () => {
+    menuIsOpen = false;
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation');
+    document.body.classList.remove('menu-open');
+    setBackgroundInert(false);
 
-  menuToggle?.addEventListener('click', () => {
-    setMenu(true);
-    window.setTimeout(() => $('#mobileMenu a')?.focus(), 120);
+    if (mobileQuery.matches && document.activeElement === document.body) {
+      menuToggle?.focus({ preventScroll: true });
+    }
   });
-  menuClose?.addEventListener('click', () => {
-    setMenu(false);
-    menuToggle?.focus();
+
+  // Keep keyboard focus in the modal even if a browser's native dialog trap
+  // briefly passes through the document body.
+  mobileMenu?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return;
+
+    const focusable = $$(
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      mobileMenu,
+    ).filter((element) => !element.hidden && element.getClientRects().length > 0);
+
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && (active === first || !mobileMenu.contains(active))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (active === last || !mobileMenu.contains(active))) {
+      event.preventDefault();
+      first.focus();
+    }
   });
-  $$('#mobileMenu a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+
+  mobileMenu?.addEventListener('click', (event) => {
+    if (event.target === mobileMenu) setMenu(false);
+  });
+
+  $$('#mobileMenu a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const target = document.querySelector(link.hash);
+      setMenu(false, false);
+      window.requestAnimationFrame(() => target?.focus({ preventScroll: true }));
+    });
+  });
+
+  mobileQuery.addEventListener('change', (event) => {
+    if (!event.matches && menuIsOpen) setMenu(false, false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuIsOpen) {
+      event.preventDefault();
+      setMenu(false);
+    }
+  });
+
+  // The skip link should move keyboard focus, not only the document scroll position.
+  $('.skip-link')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    main?.focus({ preventScroll: true });
+    main?.scrollIntoView({ behavior: motionQuery.matches ? 'auto' : 'smooth' });
+  });
+
+  // Same-page destinations become meaningful focus contexts.
+  $$('a[href^="#"]').forEach((link) => {
+    if (link.closest('#mobileMenu') || link.classList.contains('skip-link')) return;
+    link.addEventListener('click', () => {
+      const target = document.querySelector(link.hash);
+      window.requestAnimationFrame(() => target?.focus({ preventScroll: true }));
+    });
+  });
 
   const showToast = () => {
     if (!toast) return;
@@ -60,86 +203,160 @@ document.addEventListener('DOMContentLoaded', () => {
     fallback.value = text;
     fallback.setAttribute('readonly', '');
     fallback.style.position = 'fixed';
+    fallback.style.top = '0';
     fallback.style.opacity = '0';
     document.body.appendChild(fallback);
     fallback.select();
-    document.execCommand('copy');
+    const copied = document.execCommand('copy');
     fallback.remove();
+    return copied;
   };
 
   $$('[data-copy-email]').forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       const email = button.dataset.copyEmail;
-      if (navigator.clipboard?.writeText) {
-        navigator.clipboard.writeText(email).then(showToast).catch(() => {
-          fallbackCopy(email);
-          showToast();
-        });
-        return;
+      let copied = false;
+
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(email);
+          copied = true;
+        } else {
+          copied = fallbackCopy(email);
+        }
+      } catch {
+        copied = fallbackCopy(email);
       }
 
-      fallbackCopy(email);
-      showToast();
+      button.focus({ preventScroll: true });
+
+      if (copied) {
+        button.textContent = 'Copied';
+        button.classList.add('is-copied');
+        if (copyStatus) copyStatus.textContent = `Copied ${email} to the clipboard.`;
+        showToast();
+        window.clearTimeout(copyTimer);
+        copyTimer = window.setTimeout(() => {
+          button.textContent = 'Copy email';
+          button.classList.remove('is-copied');
+        }, 2200);
+      } else {
+        if (copyStatus) copyStatus.textContent = 'Could not copy automatically. Use the email link or select the address manually.';
+        button.textContent = 'Try again';
+        window.clearTimeout(copyTimer);
+        copyTimer = window.setTimeout(() => { button.textContent = 'Copy email'; }, 2200);
+      }
     });
   });
 
-  // Typing role sequence retained from the original portfolio.
+  // Phrase-level role rotation preserves the interaction without flooding live regions.
   const typingElement = $('#typing');
-  const roles = ['Python Functioner', 'JavaScript Functioner', 'AI Researcher', 'Frontend Enhancer'];
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const roles = ['Python Developer', 'JavaScript Developer', 'AI & ML Learner', 'Frontend Developer'];
+  let roleIndex = 0;
+  let roleTimer;
 
-  if (typingElement && !reduceMotion) {
-    let roleIndex = 0;
-    let characterIndex = 0;
-    let deleting = false;
+  const scheduleRoleChange = () => {
+    window.clearTimeout(roleTimer);
+    if (!typingElement || motionQuery.matches || document.hidden) return;
 
-    const typeRole = () => {
-      const role = roles[roleIndex];
-      typingElement.textContent = role.slice(0, characterIndex);
+    roleTimer = window.setTimeout(() => {
+      typingElement.classList.add('is-changing');
+      window.setTimeout(() => {
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingElement.textContent = roles[roleIndex];
+        typingElement.classList.remove('is-changing');
+        scheduleRoleChange();
+      }, 180);
+    }, 2800);
+  };
 
-      if (!deleting && characterIndex < role.length) {
-        characterIndex += 1;
-        window.setTimeout(typeRole, 85);
-        return;
-      }
+  scheduleRoleChange();
 
-      if (!deleting && characterIndex === role.length) {
-        deleting = true;
-        window.setTimeout(typeRole, 1500);
-        return;
-      }
+  motionQuery.addEventListener('change', () => {
+    if (motionQuery.matches && typingElement) {
+      window.clearTimeout(roleTimer);
+      typingElement.classList.remove('is-changing');
+      typingElement.textContent = roles[0];
+    } else {
+      scheduleRoleChange();
+    }
+  });
 
-      if (deleting && characterIndex > 0) {
-        characterIndex -= 1;
-        window.setTimeout(typeRole, 42);
-        return;
-      }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) window.clearTimeout(roleTimer);
+    else scheduleRoleChange();
+  });
 
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      window.setTimeout(typeRole, 420);
-    };
+  // Reveal content only after the observer is ready; otherwise all content stays visible.
+  const revealItems = $$('.reveal');
+  let revealObserver;
 
-    window.setTimeout(typeRole, 450);
+  if ('IntersectionObserver' in window && !motionQuery.matches) {
+    try {
+      revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          const bounds = entry.boundingClientRect;
+          const withinViewport = bounds.top <= window.innerHeight + 80 && bounds.bottom >= -80;
+          if (!entry.isIntersecting || !withinViewport) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -24px' });
+    } catch {
+      revealObserver = null;
+    }
   }
 
-  // Reveal content as it enters the viewport.
-  const revealItems = $$('.reveal');
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const observer = new IntersectionObserver((entries, revealObserver) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
+  if (revealObserver) {
+    document.documentElement.classList.add('motion-ready');
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        revealItems.forEach((item) => revealObserver.observe(item));
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -45px' });
-
-    revealItems.forEach((item) => observer.observe(item));
+    });
   } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
-  // Highlight the section currently in view.
+  // Filter the project archive while preserving native hidden semantics.
+  const filterButtons = $$('[data-project-filter]');
+  const archiveItems = $$('.archive-item');
+  const filterStatus = $('#filterStatus');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.projectFilter;
+      let visibleCount = 0;
+
+      filterButtons.forEach((item) => {
+        const selected = item === button;
+        item.classList.toggle('is-active', selected);
+        item.setAttribute('aria-pressed', String(selected));
+      });
+
+      archiveItems.forEach((item) => {
+        const visible = filter === 'all' || item.dataset.projectCategory === filter;
+        item.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      if (filterStatus) {
+        if (filter === 'all') {
+          filterStatus.textContent = visibleCount === 1
+            ? 'Showing 1 project'
+            : `Showing all ${visibleCount} projects`;
+        } else {
+          const label = filter === 'python' ? 'Python' : filter === 'java' ? 'Java' : 'interface';
+          const projectLabel = visibleCount === 1 ? 'project' : 'projects';
+          filterStatus.textContent = visibleCount === 0
+            ? `No ${label} projects found`
+            : `Showing ${visibleCount} ${label} ${projectLabel}`;
+        }
+      }
+    });
+  });
+
+  // Highlight the section currently in view across desktop and mobile navigation.
   const sectionLinks = $$('[data-section-link]');
   const trackedSections = sectionLinks
     .map((link) => document.getElementById(link.dataset.sectionLink))
@@ -156,18 +373,10 @@ document.addEventListener('DOMContentLoaded', () => {
           else link.removeAttribute('aria-current');
         });
       });
-    }, { rootMargin: '-28% 0px -58% 0px', threshold: 0 });
+    }, { rootMargin: '-24% 0px -62% 0px', threshold: 0 });
 
     trackedSections.forEach((section) => sectionObserver.observe(section));
   }
-
-  // Keep keyboard focus in the mobile panel while it is open.
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && mobileMenu?.classList.contains('is-open')) {
-      setMenu(false);
-      menuToggle?.focus();
-    }
-  });
 
   const year = $('#year');
   if (year) year.textContent = new Date().getFullYear();

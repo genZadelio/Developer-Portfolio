@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Adelio Ghosh is a computer engineering student specializing in AI, machine learning, Python, Java, and real-world software development.">
+  <meta name="description" content="Adelio Ghosh is a B.Tech CSE student focused on AI/ML and software development, building practical projects with Python, Java, JavaScript, and web tools.">
   <meta name="author" content="Adelio Ghosh">
   <meta name="theme-color" content="#0b0e14">
   <meta name="color-scheme" content="light">
@@ -11,23 +11,28 @@
   <link rel="canonical" href="https://developer-portfolio.adelioghosh.workers.dev/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Adelio Ghosh — Developer Portfolio">
-  <meta property="og:description" content="Computer engineering, AI & ML, Python, Java, and thoughtful software development.">
+  <meta property="og:site_name" content="Adelio Ghosh — Developer Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Adelio Ghosh — AI/ML & Software Developer">
+  <meta property="og:description" content="Computer engineering student focused on AI/ML and software development. Explore projects, source code, live demos, and résumé.">
   <meta property="og:url" content="https://developer-portfolio.adelioghosh.workers.dev/">
-  <meta property="og:image" content="https://developer-portfolio.adelioghosh.workers.dev/image.png">
+  <meta property="og:image" content="https://developer-portfolio.adelioghosh.workers.dev/image.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="596">
+  <meta property="og:image:alt" content="Illustrated developer working at a laptop">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Adelio Ghosh — Developer Portfolio">
-  <meta name="twitter:description" content="Computer engineering, AI & ML, Python, Java, and thoughtful software development.">
-  <meta name="twitter:image" content="https://developer-portfolio.adelioghosh.workers.dev/image.png">
+  <meta name="twitter:title" content="Adelio Ghosh — AI/ML & Software Developer">
+  <meta name="twitter:description" content="Computer engineering student focused on AI/ML and software development. Explore projects, source code, live demos, and résumé.">
+  <meta name="twitter:image" content="https://developer-portfolio.adelioghosh.workers.dev/image.webp">
+  <meta name="twitter:image:alt" content="Illustrated developer working at a laptop">
 
-  <title>Adelio Ghosh — Developer Portfolio</title>
+  <title>Adelio Ghosh — AI/ML & Software Developer Portfolio</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="preload" href="image.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="util.css">
-  <script>document.documentElement.classList.add('js');</script>
-  <noscript><style>.reveal,.hero-enter{opacity:1!important;transform:none!important}.typing-caret{display:none}</style></noscript>
   <script src="script.js" defer></script>
 
   <script type="application/ld+json">
@@ -36,14 +41,24 @@
       "@type": "Person",
       "name": "Adelio Ghosh",
       "url": "https://developer-portfolio.adelioghosh.workers.dev/",
-      "image": "https://developer-portfolio.adelioghosh.workers.dev/image.png",
       "email": "mailto:adelioghosh@gmail.com",
-      "jobTitle": "Computer Engineer",
-      "description": "Future Computer Engineer specializing in AI & ML, with a passion for Python, Java, software development, problem solving, and real-world projects.",
+      "jobTitle": "B.Tech CSE Student",
+      "description": "Computer engineering student focused on AI/ML and software development, building practical projects with Python, Java, JavaScript, and responsive web interfaces.",
       "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Python", "Java", "C++", "JavaScript", "HTML", "CSS", "Software Development", "Problem Solving"],
       "sameAs": [
         "https://github.com/genZadelio",
         "https://www.linkedin.com/in/adelio-ghosh-3a45263b5"
+      ],
+      "hasPart": [
+        { "@type": "CreativeWork", "name": "Laserpay", "url": "https://github.com/genZadelio/laserpay" },
+        { "@type": "CreativeWork", "name": "Everdrift", "url": "https://github.com/genZadelio/everdrift" },
+        { "@type": "CreativeWork", "name": "Flopcart", "url": "https://github.com/genZadelio/flopcart" },
+        { "@type": "CreativeWork", "name": "Gamazon", "url": "https://github.com/genZadelio/Gamazon" },
+        { "@type": "CreativeWork", "name": "AI Tic Tac Toe", "url": "https://github.com/genZadelio/AI-Tic-Tac-Toe" },
+        { "@type": "CreativeWork", "name": "Personal Password Manager", "url": "https://github.com/genZadelio/Personal-Password-Manager" },
+        { "@type": "CreativeWork", "name": "Banking Management System", "url": "https://github.com/genZadelio/Banking-Management-System" },
+        { "@type": "CreativeWork", "name": "Amazon Clone", "url": "https://github.com/genZadelio/Amazon-Clone" },
+        { "@type": "CreativeWork", "name": "JS Chatbot", "url": "https://github.com/genZadelio/JS-Chatbot" }
       ]
     }
   </script>
@@ -65,53 +80,60 @@
     <symbol id="icon-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
     <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
     <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4 4-2Z"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 3-3v-3a3 3 0 0 1 3-3h1"/></symbol>
   </svg>
 
-  <div class="page-noise" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
 
   <header class="site-header" id="siteHeader">
     <div class="container nav-shell">
       <a class="brand" href="#home">
         <span class="brand__mark" aria-hidden="true"><span>AG</span></span>
-        <span class="brand__copy"><strong>Adelio Ghosh</strong><small>Developer portfolio</small></span>
+        <span class="brand__copy"><strong>Adelio Ghosh</strong><small>AI/ML · Software</small></span>
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#about" data-section-link="about">About</a>
-        <a href="#skills" data-section-link="skills">Tech stack</a>
-        <a href="#projects" data-section-link="projects">Projects</a>
+        <a href="#about" data-section-link="about">Profile</a>
+        <a href="#skills" data-section-link="skills">Capabilities</a>
+        <a href="#projects" data-section-link="projects">Work</a>
+        <a href="#archive" data-section-link="archive">Archive</a>
+        <a href="#education" data-section-link="education">Education</a>
         <a href="#contact" data-section-link="contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a class="nav-status" href="#contact"><i aria-hidden="true"></i> Let’s connect</a>
-        <a class="button button--small button--dark" href="resume.html" target="_blank" rel="noopener">
-          Résumé <svg><use href="#icon-arrow-up-right"/></svg>
+        <a class="nav-status" href="#contact"><i aria-hidden="true"></i> Open to collaboration</a>
+        <a class="button button--small button--dark" href="resume.html" target="_blank" rel="noopener" aria-label="View résumé (opens in a new tab)">
+          Résumé <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg>
         </a>
         <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
-          <svg><use href="#icon-menu"/></svg>
+          <svg aria-hidden="true" focusable="false"><use href="#icon-menu"/></svg>
         </button>
       </div>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <button class="mobile-menu__close" type="button" aria-label="Close navigation"><svg><use href="#icon-close"/></svg></button>
+    <dialog class="mobile-menu" id="mobileMenu" aria-labelledby="mobileMenuTitle">
+      <button class="mobile-menu__close" type="button" aria-label="Close navigation"><svg aria-hidden="true" focusable="false"><use href="#icon-close"/></svg></button>
       <div class="mobile-menu__inner">
-        <span class="eyebrow">Navigation</span>
+        <h2 class="eyebrow" id="mobileMenuTitle">Navigation</h2>
         <nav aria-label="Mobile navigation">
-          <a href="#about"><span>01</span> About</a>
-          <a href="#skills"><span>02</span> Tech stack</a>
-          <a href="#projects"><span>03</span> Projects</a>
-          <a href="#contact"><span>04</span> Contact</a>
+          <a href="#about" data-section-link="about"><span>01</span> Profile</a>
+          <a href="#skills" data-section-link="skills"><span>02</span> Capabilities</a>
+          <a href="#projects" data-section-link="projects"><span>03</span> Selected work</a>
+          <a href="#archive" data-section-link="archive"><span>04</span> Project archive</a>
+          <a href="#education" data-section-link="education"><span>05</span> Education</a>
+          <a href="#contact" data-section-link="contact"><span>06</span> Contact</a>
         </nav>
-        <a class="button button--dark button--full" href="resume.html" target="_blank" rel="noopener">View résumé <svg><use href="#icon-arrow-up-right"/></svg></a>
+        <a class="button button--dark button--full" href="resume.html" target="_blank" rel="noopener" aria-label="View résumé (opens in a new tab)">View résumé <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
       </div>
-    </div>
+    </dialog>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="home" aria-labelledby="heroTitle">
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="home" tabindex="-1" aria-labelledby="heroTitle">
       <div class="hero__grid" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
@@ -120,53 +142,55 @@
         <div class="hero__content">
           <div class="hero__eyebrow hero-enter">
             <span class="status-dot" aria-hidden="true"></span>
-            Computer Engineering · AI & ML
+            <span>Computer Engineering · AI & ML</span>
+            <span class="hero__status">Fresher</span>
           </div>
 
           <h1 class="hero__title hero-enter" id="heroTitle">
-            <span>Fresher</span>
-            <span class="hero__title-accent">Adelio<i>.</i></span>
+            <span>Adelio</span>
+            <span class="hero__title-accent">Ghosh<i>.</i></span>
           </h1>
 
-          <div class="hero__role hero-enter" aria-live="polite">
-            <span class="hero__role-prefix">I build with</span>
-            <span class="hero__role-value" id="typing">Python Functioner</span>
+          <div class="hero__role hero-enter" role="group" aria-label="Areas of practice">
+            <span class="hero__role-prefix">BUILDING AS</span>
+            <span class="hero__role-value" id="typing" aria-hidden="true">Python Developer</span>
             <span class="typing-caret" aria-hidden="true"></span>
+            <span class="sr-only">Python Developer, JavaScript Developer, AI and machine learning learner, and Frontend Developer.</span>
           </div>
 
           <p class="hero__summary hero-enter">
-            Future Computer Engineer specializing in AI & ML. Passionate about Python, Java,
-            Software Development, Problem Solving and Building Real-World Projects.
+            Computer engineering student specializing in AI & ML. Passionate about Python, Java,
+            software development, problem solving and building real-world projects.
           </p>
 
           <div class="hero__actions hero-enter">
-            <a class="button button--light" href="resume.html" target="_blank" rel="noopener">
-              View résumé <svg><use href="#icon-arrow-up-right"/></svg>
+            <a class="button button--light" href="#projects">
+              Explore selected work <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg>
             </a>
-            <a class="button button--outline-light" href="https://github.com/genZadelio?tab=repositories" target="_blank" rel="noopener">
-              Explore projects <svg><use href="#icon-arrow-up-right"/></svg>
+            <a class="button button--outline-light" href="resume.html" target="_blank" rel="noopener" aria-label="View résumé (opens in a new tab)">
+              View résumé <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg>
             </a>
           </div>
 
-          <div class="hero__socials hero-enter" aria-label="Social links">
-            <a href="https://github.com/genZadelio" target="_blank" rel="noopener"><svg><use href="#icon-github"/></svg><span>GitHub</span></a>
-            <a href="https://www.linkedin.com/in/adelio-ghosh-3a45263b5" target="_blank" rel="noopener"><svg><use href="#icon-linkedin"/></svg><span>LinkedIn</span></a>
-            <a href="mailto:adelioghosh@gmail.com"><svg><use href="#icon-mail"/></svg><span>Email</span></a>
-          </div>
+          <nav class="hero__socials hero-enter" aria-label="Social links">
+            <a href="https://github.com/genZadelio" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>GitHub</span></a>
+            <a href="https://www.linkedin.com/in/adelio-ghosh-3a45263b5" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"/></svg><span>LinkedIn</span></a>
+            <a href="mailto:adelioghosh@gmail.com"><svg aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg><span>Email</span></a>
+          </nav>
         </div>
 
-        <div class="hero__visual hero-enter" aria-label="Developer workspace illustration">
+        <div class="hero__visual hero-enter" role="group" aria-label="Developer workspace illustration">
           <div class="portrait-frame">
-            <div class="portrait-frame__label"><span>PROFILE / 01</span><span>ADELIO.GHOSH</span></div>
+            <div class="portrait-frame__label" aria-hidden="true"><span>PROFILE / 01</span><span>ADELIO.GHOSH</span></div>
             <picture>
               <source srcset="image.webp" type="image/webp">
-              <img src="image.png" width="1200" height="715" alt="Illustrated developer working at a laptop" fetchpriority="high">
+              <img src="image.png" width="1200" height="715" alt="Illustrated developer working at a laptop" fetchpriority="high" decoding="async">
             </picture>
             <div class="portrait-frame__wash" aria-hidden="true"></div>
           </div>
 
           <div class="floating-card floating-card--status">
-            <span class="floating-card__icon"><svg><use href="#icon-spark"/></svg></span>
+            <span class="floating-card__icon"><svg aria-hidden="true" focusable="false"><use href="#icon-spark"/></svg></span>
             <span><small>BUILDING WITH</small><strong>AI · Python · Java</strong></span>
           </div>
 
@@ -181,18 +205,18 @@
       </div>
 
       <div class="container hero__facts">
-        <div class="hero-fact reveal">
+        <a class="hero-fact reveal" href="#projects">
+          <span class="hero-fact__value">09</span>
+          <span class="hero-fact__label">Selected projects</span>
+        </a>
+        <a class="hero-fact reveal" href="#projects">
+          <span class="hero-fact__value">04</span>
+          <span class="hero-fact__label">Live browser demos</span>
+        </a>
+        <a class="hero-fact reveal" href="#skills">
           <span class="hero-fact__value">06</span>
           <span class="hero-fact__label">Core technologies</span>
-        </div>
-        <div class="hero-fact reveal">
-          <span class="hero-fact__value">04</span>
-          <span class="hero-fact__label">Featured projects</span>
-        </div>
-        <div class="hero-fact reveal">
-          <span class="hero-fact__value">8.0+</span>
-          <span class="hero-fact__label">Current CGPA</span>
-        </div>
+        </a>
         <div class="hero-fact hero-fact--note reveal">
           <span class="hero-fact__value">Approach. Code. Perform.</span>
           <span class="hero-fact__label">A practical engineering mindset</span>
@@ -200,247 +224,414 @@
       </div>
     </section>
 
-    <section class="section about" id="about" aria-labelledby="aboutTitle">
+    <section class="section about" id="about" tabindex="-1" aria-labelledby="aboutTitle">
       <div class="container">
         <div class="section-heading section-heading--split reveal">
           <div>
-            <span class="eyebrow"><span>01</span> Background</span>
-            <h2 id="aboutTitle">My Info<span class="heading-dot">.</span></h2>
+            <span class="eyebrow"><span>01</span> Profile</span>
+            <h2 id="aboutTitle">Curiosity, applied<span class="heading-dot">.</span></h2>
           </div>
           <p>Academic foundations, current direction, and the mindset behind the work.</p>
         </div>
 
         <div class="about-grid">
-          <article class="about-intro reveal">
-            <span class="about-intro__label">Profile</span>
+          <div class="about-intro reveal">
+            <span class="about-intro__label">Engineering profile</span>
             <p class="about-intro__statement">Engineering ideas into useful, thoughtful software.</p>
             <p class="about-intro__copy">
               I’m drawn to AI & ML, software development and the discipline of solving real problems with code.
-              My focus is moving from learning concepts to building projects that work in the real world.
+              My approach is to learn by building: frame the problem, make a working version, then refine the details.
             </p>
-            <div class="focus-list" aria-label="Current focus">
-              <span><svg><use href="#icon-check"/></svg> AI-based projects</span>
-              <span><svg><use href="#icon-check"/></svg> Web development</span>
-              <span><svg><use href="#icon-check"/></svg> DSA & full-stack</span>
-            </div>
-          </article>
-
-          <div class="education-grid">
-            <article class="education-card reveal">
-              <div class="education-card__top">
-                <span class="education-card__number">01</span>
-                <span class="education-card__period">Secondary education</span>
-              </div>
-              <h3>School of AIS</h3>
-              <p>Board of CISCE</p>
-              <dl class="education-card__stats">
-                <div><dt>Class X</dt><dd>92%</dd></div>
-                <div><dt>Class XII</dt><dd>92%</dd></div>
-              </dl>
-            </article>
-
-            <article class="education-card education-card--dark reveal">
-              <div class="education-card__top">
-                <span class="education-card__number">02</span>
-                <span class="education-card__period">Undergraduate</span>
-              </div>
-              <h3>TMSL</h3>
-              <p>B.Tech · Computer Science & Engineering</p>
-              <dl class="education-card__stats">
-                <div><dt>Course</dt><dd>BTech CSE</dd></div>
-                <div><dt>CGPA</dt><dd>8.0+</dd></div>
-              </dl>
-            </article>
+            <ul class="focus-list" aria-label="Current focus">
+              <li><svg aria-hidden="true" focusable="false"><use href="#icon-check"/></svg> AI-based projects</li>
+              <li><svg aria-hidden="true" focusable="false"><use href="#icon-check"/></svg> Web development</li>
+              <li><svg aria-hidden="true" focusable="false"><use href="#icon-check"/></svg> DSA & full-stack</li>
+            </ul>
           </div>
+
+          <section class="about-direction reveal" aria-labelledby="directionTitle">
+            <div class="about-direction__head">
+              <span class="about-direction__pulse" aria-hidden="true"><i></i></span>
+              <div><small>CURRENT DIRECTION</small><h3 id="directionTitle">Learning by building</h3></div>
+            </div>
+            <div class="about-direction__body">
+              <div><span>01</span><p>Exploring AI & ML through practical Python projects and intelligent interfaces.</p></div>
+              <div><span>02</span><p>Strengthening DSA and full-stack development while shipping complete browser experiences.</p></div>
+              <div><span>03</span><p>Open to collaboration on machine learning, thoughtful interfaces, and real-world software.</p></div>
+            </div>
+            <a class="text-link" href="#contact">Start a conversation <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg></a>
+          </section>
         </div>
       </div>
     </section>
 
-    <section class="section skills" id="skills" aria-labelledby="skillsTitle">
+    <section class="section capabilities" id="skills" tabindex="-1" aria-labelledby="skillsTitle">
       <div class="container">
         <div class="section-heading section-heading--split reveal">
           <div>
             <span class="eyebrow"><span>02</span> Capabilities</span>
-            <h2 id="skillsTitle">Tech Stack<span class="heading-dot">.</span></h2>
+            <h2 id="skillsTitle">Tools with purpose<span class="heading-dot">.</span></h2>
           </div>
           <p>A practical toolkit across programming, interfaces, and intelligent systems.</p>
         </div>
 
-        <div class="skills-grid">
-          <article class="skill-card reveal">
-            <span class="skill-card__index">01</span>
-            <span class="skill-card__icon skill-card__icon--c">C</span>
-            <div><h3>C++</h3><p>Systems, data structures and performance-minded problem solving.</p></div>
+        <div class="capability-grid">
+          <article class="capability-card reveal">
+            <span class="capability-card__icon"><svg aria-hidden="true" focusable="false"><use href="#icon-spark"/></svg></span>
+            <span class="capability-card__index">01</span>
+            <h3>Intelligent systems</h3>
+            <p>Exploring AI & ML, Python automation, and interfaces that make intelligent behavior understandable.</p>
+            <span class="capability-card__stack">Python · AI · ML</span>
           </article>
-          <article class="skill-card reveal">
-            <span class="skill-card__index">02</span>
-            <span class="skill-card__icon skill-card__icon--j">J</span>
-            <div><h3>Java</h3><p>Robust applications, record management and clean object-oriented design.</p></div>
+          <article class="capability-card reveal">
+            <span class="capability-card__icon capability-card__icon--violet"><svg aria-hidden="true" focusable="false"><use href="#icon-code"/></svg></span>
+            <span class="capability-card__index">02</span>
+            <h3>Application logic</h3>
+            <p>Designing clear programs with object-oriented thinking, validation, and maintainable structure.</p>
+            <span class="capability-card__stack">Java · C++ · OOP</span>
           </article>
-          <article class="skill-card reveal">
-            <span class="skill-card__index">03</span>
-            <span class="skill-card__icon skill-card__icon--p">Py</span>
-            <div><h3>Python</h3><p>AI, machine learning, automation and rapid real-world prototyping.</p></div>
+          <article class="capability-card reveal">
+            <span class="capability-card__icon capability-card__icon--mint"><svg aria-hidden="true" focusable="false"><use href="#icon-grid"/></svg></span>
+            <span class="capability-card__index">03</span>
+            <h3>Interface engineering</h3>
+            <p>Building responsive, accessible interfaces where every interaction has a clear purpose.</p>
+            <span class="capability-card__stack">HTML · CSS · JavaScript</span>
           </article>
-          <article class="skill-card reveal">
-            <span class="skill-card__index">04</span>
-            <span class="skill-card__icon skill-card__icon--h">H</span>
-            <div><h3>HTML</h3><p>Semantic, accessible foundations for dependable web experiences.</p></div>
-          </article>
-          <article class="skill-card reveal">
-            <span class="skill-card__index">05</span>
-            <span class="skill-card__icon skill-card__icon--c">#</span>
-            <div><h3>CSS</h3><p>Responsive layouts, refined interaction and visual systems that scale.</p></div>
-          </article>
-          <article class="skill-card reveal">
-            <span class="skill-card__index">06</span>
-            <span class="skill-card__icon skill-card__icon--j">JS</span>
-            <div><h3>JavaScript</h3><p>Dynamic interfaces, browser experiences and interactive applications.</p></div>
+          <article class="capability-card reveal">
+            <span class="capability-card__icon capability-card__icon--amber"><svg aria-hidden="true" focusable="false"><use href="#icon-route"/></svg></span>
+            <span class="capability-card__index">04</span>
+            <h3>Product thinking</h3>
+            <p>Framing real problems, breaking them into steps, and documenting what the build teaches.</p>
+            <span class="capability-card__stack">Problem solving · Shipping</span>
           </article>
         </div>
 
-        <div class="stack-note reveal">
-          <div class="stack-note__mark"><svg><use href="#icon-terminal"/></svg></div>
-          <div><strong>AI & ML</strong><span>Intelligence</span></div>
-          <i aria-hidden="true"></i>
-          <div><strong>Python</strong><span>Language</span></div>
-          <i aria-hidden="true"></i>
-          <div><strong>Java</strong><span>Language</span></div>
-          <i aria-hidden="true"></i>
-          <div><strong>JavaScript</strong><span>Interface</span></div>
-          <i aria-hidden="true"></i>
-          <div><strong>Problem solving</strong><span>Practice</span></div>
+        <div class="tech-matrix reveal" role="group" aria-label="Technology stack">
+          <div class="tech-matrix__head"><span>Core technology</span><span>Where I apply it</span></div>
+          <div class="tech-row"><strong>C++</strong><p>Systems, data structures and performance-minded problem solving.</p><span>01</span></div>
+          <div class="tech-row"><strong>Java</strong><p>Object-oriented applications, record management and validation.</p><span>02</span></div>
+          <div class="tech-row"><strong>Python</strong><p>AI, machine learning, automation and rapid real-world prototyping.</p><span>03</span></div>
+          <div class="tech-row"><strong>HTML</strong><p>Semantic, accessible foundations for dependable web experiences.</p><span>04</span></div>
+          <div class="tech-row"><strong>CSS</strong><p>Responsive layouts, refined interaction and visual systems that scale.</p><span>05</span></div>
+          <div class="tech-row"><strong>JavaScript</strong><p>Dynamic interfaces, browser experiences and interactive applications.</p><span>06</span></div>
+        </div>
+
+        <div class="principles reveal" role="group" aria-labelledby="principlesTitle">
+          <div class="principles__intro"><span class="eyebrow">HOW I WORK</span><h3 id="principlesTitle">Four principles.<br>Every build.</h3></div>
+          <ol>
+            <li><span>01</span><div><strong>Frame the problem</strong><small>Start with the behavior that matters.</small></div></li>
+            <li><span>02</span><div><strong>Build a working slice</strong><small>Make the core idea tangible.</small></div></li>
+            <li><span>03</span><div><strong>Make every state clear</strong><small>Responsive, accessible, predictable.</small></div></li>
+            <li><span>04</span><div><strong>Document the learning</strong><small>Turn each build into reusable knowledge.</small></div></li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <section class="section projects" id="projects" aria-labelledby="projectsTitle">
+    <section class="section work" id="projects" tabindex="-1" aria-labelledby="workTitle">
       <div class="container">
         <div class="section-heading section-heading--split reveal">
           <div>
-            <span class="eyebrow"><span>03</span> Selected work</span>
-            <h2 id="projectsTitle">Featured Projects<span class="heading-dot">.</span></h2>
+            <span class="eyebrow"><span>03</span> Selected systems</span>
+            <h2 id="workTitle">Proof in the browser<span class="heading-dot">.</span></h2>
           </div>
-          <p>Four focused builds spanning secure tooling, business software, intelligent interfaces, and responsive web design.</p>
+          <p>Four recent, running builds spanning product interfaces, browser systems, and playable experiences.</p>
         </div>
+      </div>
 
-        <div class="projects-grid">
-          <article class="project-card project-card--violet reveal">
-            <div class="project-card__visual" aria-hidden="true">
-              <span class="project-card__number">01</span>
-              <div class="visual-window visual-window--vault">
-                <div class="visual-window__bar"><i></i><i></i><i></i></div>
-                <div class="vault-ui"><span class="vault-ui__lock">⌁</span><strong>Secure vault</strong><small>Credentials encrypted</small><div class="vault-ui__bar"><i></i></div></div>
+      <div class="container work-list">
+        <article class="work-case reveal" id="laserpay" data-work-case="laserpay">
+          <div class="work-case__visual">
+            <span class="visual-note">Conceptual preview</span>
+            <div class="case-window case-window--laserpay" aria-hidden="true">
+              <div class="case-window__top"><span></span><span></span><span></span><small>laserpay / dashboard</small></div>
+              <div class="laserpay-ui">
+                <aside><b>L</b><i></i><i></i><i></i><i></i></aside>
+                <div class="laserpay-ui__main">
+                  <small>TOTAL BALANCE</small><strong>₹ 18,42,680.50</strong>
+                  <div class="laserpay-ui__chips"><span>Payments</span><span>Banking</span><span>Payroll</span></div>
+                  <div class="laserpay-ui__chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__meta"><span>Python · Security</span><span>2026</span></div>
-              <h3>Personal Password Manager</h3>
-              <p>Secure Credential Manager built with Python.</p>
-              <div class="project-card__footer">
-                <span class="project-card__tags"><i>Python</i><i>Security</i></span>
-                <a href="https://github.com/genZadelio/Personal-Password-Manager" target="_blank" rel="noopener" aria-label="View Personal Password Manager on GitHub">View on GitHub <svg><use href="#icon-arrow-up-right"/></svg></a>
-              </div>
+          </div>
+          <div class="work-case__copy">
+            <div class="case-meta"><span>01 / 04</span><span>EDUCATIONAL UI DEMO</span><span>2026</span></div>
+            <h3>Laserpay</h3>
+            <p class="case-lead">An educational finance-platform interface demo for payments, payouts, banking, payroll, and developer workflows.</p>
+            <dl class="case-details">
+              <div><dt>Scope</dt><dd>Responsive multi-product interface with interactive workflows, code showcase, FAQ, and disclosure-safe demo dialogs.</dd></div>
+              <div><dt>Stack</dt><dd>HTML · CSS · Vanilla JavaScript</dd></div>
+              <div><dt>Learning</dt><dd>Separating a dense multi-product interface into clear sections while keeping navigation and disclosure states understandable.</dd></div>
+            </dl>
+            <div class="case-actions">
+              <a class="button button--dark" href="https://laserpay-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open live demo — Laserpay (opens in a new tab)">Open live demo <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <a class="case-source" href="https://github.com/genZadelio/laserpay" target="_blank" rel="noopener noreferrer" aria-label="View source — Laserpay on GitHub (opens in a new tab)"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg> View source</a>
             </div>
-          </article>
+            <a class="case-next" href="#everdrift">Next project · Everdrift <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg></a>
+          </div>
+        </article>
 
-          <article class="project-card project-card--blue reveal">
-            <div class="project-card__visual" aria-hidden="true">
-              <span class="project-card__number">02</span>
-              <div class="visual-window visual-window--bank">
-                <div class="visual-window__bar"><i></i><i></i><i></i></div>
-                <div class="bank-ui"><span>₹</span><strong>84,260</strong><small>Available balance</small><div><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <article class="work-case work-case--reverse reveal" id="everdrift" data-work-case="everdrift">
+          <div class="work-case__visual">
+            <span class="visual-note">Conceptual preview</span>
+            <div class="case-window case-window--everdrift" aria-hidden="true">
+              <div class="case-window__top"><span></span><span></span><span></span><small>everdrift / live field</small></div>
+              <div class="everdrift-ui">
+                <i class="star star--1"></i><i class="star star--2"></i><i class="star star--3"></i><i class="star star--4"></i><i class="star star--5"></i><i class="star star--6"></i>
+                <div class="everdrift-ui__ship"></div>
+                <div class="everdrift-ui__hud"><span>SCORE 004820</span><span>× 04</span><small>PHASE READY</small></div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__meta"><span>Java · Records</span><span>2026</span></div>
-              <h3>Banking Management System</h3>
-              <p>Java-based record management software for Banking.</p>
-              <div class="project-card__footer">
-                <span class="project-card__tags"><i>Java</i><i>Records</i></span>
-                <a href="https://github.com/genZadelio/Banking-Management-System" target="_blank" rel="noopener" aria-label="View Banking Management System on GitHub">View on GitHub <svg><use href="#icon-arrow-up-right"/></svg></a>
-              </div>
+          </div>
+          <div class="work-case__copy">
+            <div class="case-meta"><span>02 / 04</span><span>PERSONAL PROJECT</span><span>2026</span></div>
+            <h3>Everdrift</h3>
+            <p class="case-lead">A dependency-free endless browser game set in an ever-scaling procedural space field.</p>
+            <dl class="case-details">
+              <div><dt>Scope</dt><dd>Collectible chaining, phase charges, generated sound, responsive touch controls, persistent personal best, and an installable offline PWA.</dd></div>
+              <div><dt>Stack</dt><dd>JavaScript · Canvas · Web Audio · PWA</dd></div>
+              <div><dt>Learning</dt><dd>Coordinating time-based gameplay, Canvas rendering, generated audio, and persistent state without a framework.</dd></div>
+            </dl>
+            <div class="case-actions">
+              <a class="button button--dark" href="https://everdrift.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open live demo — Everdrift (opens in a new tab)">Open live demo <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <a class="case-source" href="https://github.com/genZadelio/everdrift" target="_blank" rel="noopener noreferrer" aria-label="View source — Everdrift on GitHub (opens in a new tab)"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg> View source</a>
             </div>
-          </article>
+            <a class="case-next" href="#flopcart">Next project · Flopcart <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg></a>
+          </div>
+        </article>
 
-          <article class="project-card project-card--mint reveal">
-            <div class="project-card__visual" aria-hidden="true">
-              <span class="project-card__number">03</span>
-              <div class="visual-window visual-window--game">
-                <div class="visual-window__bar"><i></i><i></i><i></i></div>
-                <div class="game-ui"><span>X</span><span>O</span><span>X</span><span>O</span><span>X</span><span>O</span><span>X</span><span>O</span><span>X</span></div>
+        <article class="work-case reveal" id="flopcart" data-work-case="flopcart">
+          <div class="work-case__visual">
+            <span class="visual-note">Conceptual preview</span>
+            <div class="case-window case-window--flopcart" aria-hidden="true">
+              <div class="case-window__top"><span></span><span></span><span></span><small>flopcart / storefront</small></div>
+              <div class="flopcart-ui">
+                <div class="flopcart-ui__nav"><b>f</b><span></span><i></i><i></i><i></i></div>
+                <div class="flopcart-ui__search"></div>
+                <div class="flopcart-ui__products"><i></i><i></i><i></i><i></i></div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__meta"><span>Python · Tkinter · AI</span><span>2026</span></div>
-              <h3>Tic Tac Toe UI</h3>
-              <p>Intelligent GUI Game using Tkinter and OpenAI integration with Python.</p>
-              <div class="project-card__footer">
-                <span class="project-card__tags"><i>Python</i><i>OpenAI</i></span>
-                <a href="https://github.com/genZadelio/AI-Tic-Tac-Toe" target="_blank" rel="noopener" aria-label="View Tic Tac Toe UI on GitHub">View on GitHub <svg><use href="#icon-arrow-up-right"/></svg></a>
-              </div>
+          </div>
+          <div class="work-case__copy">
+            <div class="case-meta"><span>03 / 04</span><span>EDUCATIONAL UI DEMO</span><span>2026</span></div>
+            <h3>Flopcart</h3>
+            <p class="case-lead">An educational storefront interface demo exploring familiar marketplace UX patterns with browser-only state.</p>
+            <dl class="case-details">
+              <div><dt>Scope</dt><dd>Search, category filtering, wishlist, a local cart with quantity controls, hero carousel, responsive catalog, and toast feedback.</dd></div>
+              <div><dt>Stack</dt><dd>HTML · CSS · Vanilla JavaScript</dd></div>
+              <div><dt>Learning</dt><dd>Keeping search, filters, wishlist, and cart state understandable while limiting behavior to the browser.</dd></div>
+            </dl>
+            <div class="case-actions">
+              <a class="button button--dark" href="https://flopcart-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open live demo — Flopcart (opens in a new tab)">Open live demo <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <a class="case-source" href="https://github.com/genZadelio/flopcart" target="_blank" rel="noopener noreferrer" aria-label="View source — Flopcart on GitHub (opens in a new tab)"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg> View source</a>
             </div>
-          </article>
+            <a class="case-next" href="#gamazon">Next project · Gamazon <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg></a>
+          </div>
+        </article>
 
-          <article class="project-card project-card--amber reveal">
-            <div class="project-card__visual" aria-hidden="true">
-              <span class="project-card__number">04</span>
-              <div class="visual-window visual-window--store">
-                <div class="visual-window__bar"><i></i><i></i><i></i></div>
-                <div class="store-ui"><span class="store-ui__nav">a</span><div><i></i><i></i><i></i></div><strong>Everything you need.</strong><button>Shop now</button></div>
+        <article class="work-case work-case--reverse reveal" id="gamazon" data-work-case="gamazon">
+          <div class="work-case__visual">
+            <span class="visual-note">Conceptual preview</span>
+            <div class="case-window case-window--gamazon" aria-hidden="true">
+              <div class="case-window__top"><span></span><span></span><span></span><small>gamazon / storefront</small></div>
+              <div class="gamazon-ui">
+                <div class="gamazon-ui__nav"><b>G</b><span></span><span></span><span></span></div>
+                <div class="gamazon-ui__hero"><small>NEW COLLECTION</small><strong>Made for your<br>everyday.</strong><i>Shop now</i></div>
+                <div class="gamazon-ui__grid"><i></i><i></i><i></i><i></i></div>
               </div>
             </div>
-            <div class="project-card__content">
-              <div class="project-card__meta"><span>HTML5 · CSS3 · Responsive</span><span>2026</span></div>
-              <h3>Amazon Clone</h3>
-              <p>A responsive Amazon homepage clone built with HTML5 and CSS3, featuring a modern UI, sticky navigation, product grid, and Amazon-inspired design.</p>
-              <div class="project-card__footer">
-                <span class="project-card__tags"><i>HTML5</i><i>CSS3</i></span>
-                <a href="https://github.com/genZadelio/Amazon-Clone" target="_blank" rel="noopener" aria-label="View Amazon Clone on GitHub">View on GitHub <svg><use href="#icon-arrow-up-right"/></svg></a>
-              </div>
+          </div>
+          <div class="work-case__copy">
+            <div class="case-meta"><span>04 / 04</span><span>EDUCATIONAL UI DEMO</span><span>2026</span></div>
+            <h3>Gamazon</h3>
+            <p class="case-lead">An original educational storefront interface with fictional sample data and zero affiliation to any marketplace brand.</p>
+            <dl class="case-details">
+              <div><dt>Scope</dt><dd>Responsive banner and hero, original SVG category illustrations, browser-only search, category filtering, and disclosure-focused content.</dd></div>
+              <div><dt>Stack</dt><dd>HTML · CSS · Vanilla JavaScript</dd></div>
+              <div><dt>Learning</dt><dd>Building a cohesive visual system from original illustrations while keeping the brand and sample data explicitly fictional.</dd></div>
+            </dl>
+            <div class="case-actions">
+              <a class="button button--dark" href="https://gamazon-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open live demo — Gamazon (opens in a new tab)">Open live demo <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <a class="case-source" href="https://github.com/genZadelio/Gamazon" target="_blank" rel="noopener noreferrer" aria-label="View source — Gamazon on GitHub (opens in a new tab)"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg> View source</a>
             </div>
-          </article>
-        </div>
+            <a class="case-next" href="#archive">Continue to the archive <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
 
-        <div class="projects-cta reveal">
+      <div class="container work-continuation reveal">
+        <span>Keep exploring</span>
+        <a href="#archive">Open the project archive <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section archive" id="archive" tabindex="-1" aria-labelledby="archiveTitle">
+      <div class="container">
+        <div class="section-heading section-heading--split reveal">
           <div>
-            <span class="eyebrow">Open source, always</span>
-            <h3>There’s more in the workshop.</h3>
+            <span class="eyebrow"><span>04</span> Project archive</span>
+            <h2 id="archiveTitle">The build log<span class="heading-dot">.</span></h2>
           </div>
-          <a class="button button--dark" href="https://github.com/genZadelio?tab=repositories" target="_blank" rel="noopener">Browse all repositories <svg><use href="#icon-arrow-up-right"/></svg></a>
+          <p>Earlier projects remain part of the story. Filter the archive by the tools and ideas each one demonstrates.</p>
+        </div>
+
+        <div class="archive-toolbar reveal">
+          <div class="filter-controls" role="group" aria-label="Filter projects">
+            <button class="is-active" type="button" data-project-filter="all" aria-controls="projectArchiveList" aria-pressed="true">All <span aria-hidden="true">05</span></button>
+            <button type="button" data-project-filter="python" aria-controls="projectArchiveList" aria-pressed="false">Python <span aria-hidden="true">02</span></button>
+            <button type="button" data-project-filter="java" aria-controls="projectArchiveList" aria-pressed="false">Java <span aria-hidden="true">01</span></button>
+            <button type="button" data-project-filter="interface" aria-controls="projectArchiveList" aria-pressed="false">Interfaces <span aria-hidden="true">02</span></button>
+          </div>
+          <p id="filterStatus" class="filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 5 projects</p>
+        </div>
+
+        <div class="archive-list" id="projectArchiveList">
+          <article class="archive-item reveal" data-project-category="python">
+            <div class="archive-item__index">05</div>
+            <div class="archive-item__main">
+              <span class="archive-item__type">PYTHON · EDUCATIONAL TOOL</span>
+              <h3>Personal Password Manager</h3>
+              <p>A command-line password manager demonstrating random generation, local file storage, duplicate prevention, and input validation.</p>
+              <div class="archive-item__tags"><span>Python 3</span><span>File handling</span><span>Validation</span></div>
+            </div>
+            <div class="archive-item__action">
+              <a href="https://github.com/genZadelio/Personal-Password-Manager" target="_blank" rel="noopener noreferrer" aria-label="View Personal Password Manager source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <small>Plain-text educational storage</small>
+            </div>
+          </article>
+
+          <article class="archive-item reveal" data-project-category="java">
+            <div class="archive-item__index">06</div>
+            <div class="archive-item__main">
+              <span class="archive-item__type">JAVA · OBJECT-ORIENTED PROGRAM</span>
+              <h3>Banking Management System</h3>
+              <p>An object-oriented banking simulation supporting deposits, withdrawals, balance checks, and input validation.</p>
+              <div class="archive-item__tags"><span>Java</span><span>OOP</span><span>Validation</span></div>
+            </div>
+            <div class="archive-item__action">
+              <a href="https://github.com/genZadelio/Banking-Management-System" target="_blank" rel="noopener noreferrer" aria-label="View Banking Management System source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="archive-item reveal" data-project-category="python">
+            <div class="archive-item__index">07</div>
+            <div class="archive-item__main">
+              <span class="archive-item__type">PYTHON · DESKTOP GAME</span>
+              <h3>Tic Tac Toe UI</h3>
+              <p>A human-versus-AI desktop game with Tkinter, random-move opponent, win and tie detection, scoreboard, sound, and restart flow.</p>
+              <div class="archive-item__tags"><span>Python 3</span><span>Tkinter</span><span>Desktop GUI</span></div>
+            </div>
+            <div class="archive-item__action">
+              <a href="https://github.com/genZadelio/AI-Tic-Tac-Toe" target="_blank" rel="noopener noreferrer" aria-label="View Tic Tac Toe UI source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="archive-item reveal" data-project-category="interface">
+            <div class="archive-item__index">08</div>
+            <div class="archive-item__main">
+              <span class="archive-item__type">HTML5 · CSS3 · RESPONSIVE UI</span>
+              <h3>Amazon Clone</h3>
+              <p>A responsive storefront interface demonstrating sticky navigation, a structured product grid, and modern visual hierarchy.</p>
+              <div class="archive-item__tags"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
+            </div>
+            <div class="archive-item__action">
+              <a href="https://github.com/genZadelio/Amazon-Clone" target="_blank" rel="noopener noreferrer" aria-label="View Amazon Clone source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="archive-item reveal" data-project-category="interface">
+            <div class="archive-item__index">09</div>
+            <div class="archive-item__main">
+              <span class="archive-item__type">HTML · CSS · LOCAL CHAT UI</span>
+              <h3>JS Chatbot</h3>
+              <p>A small, responsive educational chat interface. Messages are processed locally and are never sent to an AI service.</p>
+              <div class="archive-item__tags"><span>JavaScript</span><span>Chat UI</span><span>Local only</span></div>
+            </div>
+            <div class="archive-item__action">
+              <a href="https://github.com/genZadelio/JS-Chatbot" target="_blank" rel="noopener noreferrer" aria-label="View JS Chatbot source on GitHub (opens in a new tab)">Source <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <a class="archive-item__demo" href="https://js-chatbot-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the JS Chatbot live demo (opens in a new tab)">Demo <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="archive-cta reveal">
+          <div><span class="eyebrow">Public repositories</span><h3>There’s more in the workshop.</h3></div>
+          <a class="button button--dark" href="https://github.com/genZadelio?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse all repositories (opens in a new tab)">Browse all repositories <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="contact-section" id="contact" aria-labelledby="contactTitle">
+    <section class="section education" id="education" tabindex="-1" aria-labelledby="educationTitle">
+      <div class="container">
+        <div class="section-heading section-heading--split reveal">
+          <div>
+            <span class="eyebrow"><span>05</span> Education</span>
+            <h2 id="educationTitle">Academic foundation<span class="heading-dot">.</span></h2>
+          </div>
+          <p>A clear academic base in computer science, supported by consistent performance through school and undergraduate study.</p>
+        </div>
+
+        <div class="education-timeline">
+          <article class="education-step reveal">
+            <div class="education-step__marker"><span>02</span></div>
+            <div class="education-step__content">
+              <span class="education-step__period">UNDERGRADUATE</span>
+              <h3>TMSL</h3>
+              <p>B.Tech · Computer Science & Engineering</p>
+              <div class="education-step__metric"><strong>8.0+</strong><span>Current CGPA</span></div>
+            </div>
+          </article>
+          <article class="education-step reveal">
+            <div class="education-step__marker"><span>01</span></div>
+            <div class="education-step__content">
+              <span class="education-step__period">SECONDARY EDUCATION</span>
+              <h3>School of AIS</h3>
+              <p>Board of CISCE</p>
+              <div class="education-step__metric education-step__metric--split"><strong>92%</strong><span>Class X</span><strong>92%</strong><span>Class XII</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" tabindex="-1" aria-labelledby="contactTitle">
       <div class="container">
         <div class="contact-panel reveal">
           <div class="contact-panel__orb" aria-hidden="true"></div>
           <div class="contact-panel__copy">
-            <span class="eyebrow"><span>04</span> Get in touch</span>
-            <h2 id="contactTitle">For Any Query<span>.</span></h2>
-            <p>Have an idea, a collaboration opportunity, or simply want to talk about technology? My inbox is open.</p>
+            <span class="eyebrow"><span>06</span> Get in touch</span>
+            <h2 id="contactTitle">Let’s connect<span>.</span></h2>
+            <p>For any query, collaboration opportunity, or thoughtful conversation about technology, my inbox is open.</p>
             <div class="contact-actions">
-              <a class="contact-mail" href="mailto:adelioghosh@gmail.com">adelioghosh@gmail.com <svg><use href="#icon-arrow-up-right"/></svg></a>
-              <button class="copy-email" type="button" data-copy-email="adelioghosh@gmail.com" aria-label="Copy email address">Copy</button>
+              <a class="contact-mail" href="mailto:adelioghosh@gmail.com">adelioghosh@gmail.com <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
+              <button class="copy-email" type="button" data-copy-email="adelioghosh@gmail.com" aria-label="Copy email address">Copy email</button>
             </div>
+            <ul class="collaboration-tags" aria-label="Collaboration areas">
+              <li>AI / ML prototypes</li><li>Frontend systems</li><li>Browser experiences</li>
+            </ul>
           </div>
 
           <div class="contact-panel__links">
-            <a href="https://github.com/genZadelio" target="_blank" rel="noopener">
-              <span class="contact-link__icon"><svg><use href="#icon-github"/></svg></span>
-              <span><small>Code & projects</small><strong>GitHub</strong></span>
-              <svg><use href="#icon-arrow-up-right"/></svg>
+            <a href="resume.html" target="_blank" rel="noopener noreferrer" aria-label="Experience & education — Résumé (opens in a new tab)">
+              <span class="contact-link__icon"><svg aria-hidden="true" focusable="false"><use href="#icon-terminal"/></svg></span>
+              <span><small>Experience & education</small><strong>Résumé</strong></span>
+              <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg>
             </a>
-            <a href="https://www.linkedin.com/in/adelio-ghosh-3a45263b5" target="_blank" rel="noopener">
-              <span class="contact-link__icon"><svg><use href="#icon-linkedin"/></svg></span>
+            <a href="https://github.com/genZadelio" target="_blank" rel="noopener noreferrer" aria-label="Code & projects — GitHub (opens in a new tab)">
+              <span class="contact-link__icon"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg></span>
+              <span><small>Code & projects</small><strong>GitHub</strong></span>
+              <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/adelio-ghosh-3a45263b5" target="_blank" rel="noopener noreferrer" aria-label="Professional profile — LinkedIn (opens in a new tab)">
+              <span class="contact-link__icon"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"/></svg></span>
               <span><small>Professional profile</small><strong>LinkedIn</strong></span>
-              <svg><use href="#icon-arrow-up-right"/></svg>
+              <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg>
             </a>
             <a href="mailto:adelioghosh@gmail.com">
-              <span class="contact-link__icon"><svg><use href="#icon-mail"/></svg></span>
+              <span class="contact-link__icon"><svg aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg></span>
               <span><small>Send a message</small><strong>Gmail</strong></span>
-              <svg><use href="#icon-arrow-up-right"/></svg>
+              <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg>
             </a>
           </div>
         </div>
@@ -452,24 +643,26 @@
     <div class="container footer__top">
       <a class="brand brand--footer" href="#home">
         <span class="brand__mark" aria-hidden="true"><span>AG</span></span>
-        <span class="brand__copy"><strong>Adelio Ghosh</strong><small>Developer portfolio</small></span>
+        <span class="brand__copy"><strong>Adelio Ghosh</strong><small>AI/ML · Software</small></span>
       </a>
       <p>Designed with intention. Built with HTML, CSS & JavaScript.</p>
-      <a class="footer__top-link" href="#home">Back to top <svg><use href="#icon-arrow-up-right"/></svg></a>
+      <a class="footer__top-link" href="#home">Back to top <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"/></svg></a>
     </div>
     <div class="container footer__bottom">
-      <span>© <span id="year"></span> Adelio Ghosh. All rights reserved.</span>
+      <span>© <span id="year">2026</span> Adelio Ghosh. All rights reserved.</span>
       <span>Approach. Code. Perform.</span>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
-    <span><svg><use href="#icon-check"/></svg></span>
+  <div class="sr-only" id="copyStatus" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="toast" id="toast" aria-hidden="true">
+    <span><svg aria-hidden="true" focusable="false"><use href="#icon-check"/></svg></span>
     <div><strong>Email copied</strong><small>adelioghosh@gmail.com</small></div>
   </div>
 
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-    <svg><use href="#icon-arrow-right"/></svg>
+    <svg aria-hidden="true" focusable="false"><use href="#icon-arrow-right"/></svg>
   </button>
 </body>
 </html>

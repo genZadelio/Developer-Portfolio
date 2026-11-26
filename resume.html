@@ -1,57 +1,95 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Résumé of Adelio Ghosh — computer engineer specializing in AI, ML, Python, Java, and software development.">
+  <meta name="description" content="Résumé of Adelio Ghosh, a B.Tech CSE student focused on AI/ML, Python, Java, JavaScript, and software development.">
   <meta name="theme-color" content="#0b0e14">
-  <title>Adelio Ghosh — Résumé</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://developer-portfolio.adelioghosh.workers.dev/resume">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Adelio Ghosh — Developer Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Adelio Ghosh — Résumé">
+  <meta property="og:description" content="B.Tech CSE student focused on AI/ML and software development, with projects in Python, Java, JavaScript, and responsive web interfaces.">
+  <meta property="og:url" content="https://developer-portfolio.adelioghosh.workers.dev/resume">
+  <meta property="og:image" content="https://developer-portfolio.adelioghosh.workers.dev/image.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="596">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adelio Ghosh — Résumé">
+  <meta name="twitter:description" content="B.Tech CSE student focused on AI/ML and software development.">
+  <meta name="twitter:image" content="https://developer-portfolio.adelioghosh.workers.dev/image.webp">
+
+  <title>Adelio Ghosh — Résumé | Computer Engineering Student</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="util.css">
   <link rel="stylesheet" href="resume.css">
+  <script src="resume.js" defer></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://developer-portfolio.adelioghosh.workers.dev/resume",
+      "name": "Adelio Ghosh — Résumé",
+      "about": {
+        "@type": "Person",
+        "name": "Adelio Ghosh",
+        "email": "mailto:adelioghosh@gmail.com",
+        "jobTitle": "B.Tech CSE Student",
+        "url": "https://developer-portfolio.adelioghosh.workers.dev/",
+        "sameAs": [
+          "https://github.com/genZadelio",
+          "https://www.linkedin.com/in/adelio-ghosh-3a45263b5"
+        ]
+      }
+    }
+  </script>
 </head>
 <body class="resume-body">
   <header class="resume-toolbar">
     <a class="resume-back" href="index.html"><span aria-hidden="true">←</span> Portfolio</a>
-    <button class="resume-print" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <button class="resume-print" id="resumePrint" type="button">Print / Save as PDF</button>
   </header>
 
   <main class="resume-sheet">
     <header class="resume-header">
       <div class="resume-header__identity">
-        <span class="resume-monogram">AG</span>
+        <span class="resume-monogram" aria-hidden="true">AG</span>
         <div>
           <h1>Adelio Ghosh</h1>
-          <p>Computer Engineer · AI & ML</p>
+          <p>B.Tech CSE Student · AI/ML & Software Development</p>
         </div>
       </div>
       <div class="resume-header__contact">
         <a href="mailto:adelioghosh@gmail.com">adelioghosh@gmail.com</a>
-        <a href="https://github.com/genZadelio" target="_blank" rel="noopener">github.com/genZadelio</a>
-        <a href="https://www.linkedin.com/in/adelio-ghosh-3a45263b5" target="_blank" rel="noopener">linkedin.com/in/adelio-ghosh</a>
+        <a href="https://github.com/genZadelio" target="_blank" rel="noopener noreferrer" aria-label="github.com/genZadelio — GitHub profile (opens in a new tab)">github.com/genZadelio</a>
+        <a href="https://www.linkedin.com/in/adelio-ghosh-3a45263b5" target="_blank" rel="noopener noreferrer" aria-label="linkedin.com/in/adelio-ghosh-3a45263b5 — LinkedIn profile (opens in a new tab)">linkedin.com/in/adelio-ghosh-3a45263b5</a>
       </div>
     </header>
 
-    <section class="resume-section resume-summary">
-      <div class="resume-section__title"><span>01</span><h2>Profile</h2></div>
+    <section class="resume-section resume-summary" aria-labelledby="summaryTitle">
+      <div class="resume-section__title"><span>01</span><h2 id="summaryTitle">Summary</h2></div>
       <div class="resume-section__body">
         <p>
-          Future Computer Engineer specializing in AI & ML. Passionate about Python, Java,
-          Software Development, Problem Solving and Building Real-World Projects.
+          B.Tech CSE student focused on AI/ML and software development, building Python, Java,
+          and JavaScript projects while applying data structures, algorithms, and practical problem solving.
         </p>
-        <div class="resume-focus">
-          <span>AI-based projects</span>
-          <span>Web development</span>
-          <span>DSA & full-stack</span>
-        </div>
+        <ul class="resume-focus">
+          <li>AI & ML</li>
+          <li>Web development</li>
+          <li>DSA & full-stack</li>
+        </ul>
       </div>
     </section>
 
-    <section class="resume-section">
-      <div class="resume-section__title"><span>02</span><h2>Education</h2></div>
+    <section class="resume-section" aria-labelledby="educationTitle">
+      <div class="resume-section__title"><span>02</span><h2 id="educationTitle">Education</h2></div>
       <div class="resume-section__body resume-education">
         <article>
           <div class="resume-item__heading">
@@ -68,42 +106,101 @@
       </div>
     </section>
 
-    <section class="resume-section">
-      <div class="resume-section__title"><span>03</span><h2>Tech Stack</h2></div>
+    <section class="resume-section" aria-labelledby="skillsTitle">
+      <div class="resume-section__title"><span>03</span><h2 id="skillsTitle">Technical Skills</h2></div>
       <div class="resume-section__body">
         <ul class="resume-skills">
           <li><strong>Languages</strong><span>Python · Java · C++ · JavaScript</span></li>
           <li><strong>Web</strong><span>HTML · CSS</span></li>
           <li><strong>Focus</strong><span>AI & ML · Software Development · Problem Solving</span></li>
+          <li><strong>Tools</strong><span>Git · GitHub · VS Code</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="resume-section">
-      <div class="resume-section__title"><span>04</span><h2>Projects</h2></div>
+    <section class="resume-section" aria-labelledby="selectedWorkTitle">
+      <div class="resume-section__title"><span>04</span><h2 id="selectedWorkTitle">Selected Work</h2></div>
       <div class="resume-section__body resume-projects">
         <article>
           <div class="resume-item__heading">
-            <div><h3>Personal Password Manager</h3><p>Secure Credential Manager built with Python.</p></div>
-            <a href="https://github.com/genZadelio/Personal-Password-Manager" target="_blank" rel="noopener">GitHub ↗</a>
+            <div><h3>Everdrift</h3><p>Dependency-free endless browser game with procedural environments, scaling difficulty, touch controls, generated sound, and an installable offline PWA.</p><span class="resume-project__meta">JavaScript · Canvas · Web Audio · PWA · Personal project</span></div>
+            <div class="resume-project__links">
+              <a href="https://everdrift.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Everdrift live demo (opens in a new tab)">Live demo ↗</a>
+              <a href="https://github.com/genZadelio/everdrift" target="_blank" rel="noopener noreferrer" aria-label="View Everdrift source on GitHub (opens in a new tab)">Source ↗</a>
+            </div>
           </div>
         </article>
+
         <article>
           <div class="resume-item__heading">
-            <div><h3>Banking Management System</h3><p>Java-based record management software for Banking.</p></div>
-            <a href="https://github.com/genZadelio/Banking-Management-System" target="_blank" rel="noopener">GitHub ↗</a>
+            <div><h3>Gamazon</h3><p>Original educational storefront interface with fictional sample data, responsive layouts, browser-only search, and category filtering.</p><span class="resume-project__meta">HTML · CSS · JavaScript · Educational demo</span></div>
+            <div class="resume-project__links">
+              <a href="https://gamazon-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Gamazon live demo (opens in a new tab)">Live demo ↗</a>
+              <a href="https://github.com/genZadelio/Gamazon" target="_blank" rel="noopener noreferrer" aria-label="View Gamazon source on GitHub (opens in a new tab)">Source ↗</a>
+            </div>
           </div>
         </article>
+
         <article>
           <div class="resume-item__heading">
-            <div><h3>Tic Tac Toe UI</h3><p>Intelligent GUI Game using Tkinter and OpenAI integration with Python.</p></div>
-            <a href="https://github.com/genZadelio/AI-Tic-Tac-Toe" target="_blank" rel="noopener">GitHub ↗</a>
+            <div><h3>Flopcart</h3><p>Educational marketplace interface demonstrating search, category filters, wishlist state, a browser-only cart, and responsive product discovery.</p><span class="resume-project__meta">HTML · CSS · JavaScript · Educational demo</span></div>
+            <div class="resume-project__links">
+              <a href="https://flopcart-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Flopcart live demo (opens in a new tab)">Live demo ↗</a>
+              <a href="https://github.com/genZadelio/flopcart" target="_blank" rel="noopener noreferrer" aria-label="View Flopcart source on GitHub (opens in a new tab)">Source ↗</a>
+            </div>
           </div>
         </article>
+
         <article>
           <div class="resume-item__heading">
-            <div><h3>Amazon Clone</h3><p>A responsive Amazon homepage clone built with HTML5 and CSS3, featuring a modern UI, sticky navigation, product grid, and Amazon-inspired design.</p></div>
-            <a href="https://github.com/genZadelio/Amazon-Clone" target="_blank" rel="noopener">GitHub ↗</a>
+            <div><h3>Laserpay</h3><p>Fictional finance-dashboard interface demonstrating multi-product navigation, responsive layouts, interactive workflows, FAQ content, and disclosure-safe dialogs.</p><span class="resume-project__meta">HTML · CSS · JavaScript · Educational UI demo</span></div>
+            <div class="resume-project__links">
+              <a href="https://laserpay-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Laserpay live demo (opens in a new tab)">Live demo ↗</a>
+              <a href="https://github.com/genZadelio/laserpay" target="_blank" rel="noopener noreferrer" aria-label="View Laserpay source on GitHub (opens in a new tab)">Source ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume-section" aria-labelledby="additionalWorkTitle">
+      <div class="resume-section__title"><span>05</span><h2 id="additionalWorkTitle">Additional Projects</h2></div>
+      <div class="resume-section__body resume-projects resume-projects--compact">
+        <article>
+          <div class="resume-item__heading">
+            <div><h3>Personal Password Manager</h3><p>Python command-line educational project demonstrating random generation, local file storage, duplicate prevention, and input validation. Credentials are stored in plain text and are not suitable for real use.</p><span class="resume-project__meta">Python 3 · CLI · File handling</span></div>
+            <a href="https://github.com/genZadelio/Personal-Password-Manager" target="_blank" rel="noopener noreferrer" aria-label="View Personal Password Manager source on GitHub (opens in a new tab)">Source ↗</a>
+          </div>
+        </article>
+
+        <article>
+          <div class="resume-item__heading">
+            <div><h3>Banking Management System</h3><p>Java console application supporting deposits, withdrawals, balance checks, account details, and input validation through object-oriented design.</p><span class="resume-project__meta">Java · OOP · Console application</span></div>
+            <a href="https://github.com/genZadelio/Banking-Management-System" target="_blank" rel="noopener noreferrer" aria-label="View Banking Management System source on GitHub (opens in a new tab)">Source ↗</a>
+          </div>
+        </article>
+
+        <article>
+          <div class="resume-item__heading">
+            <div><h3>Tic Tac Toe UI</h3><p>Python/Tkinter desktop game with win and tie detection, score tracking, sound, restart controls, and a random-move opponent.</p><span class="resume-project__meta">Python 3 · Tkinter · Desktop GUI</span></div>
+            <a href="https://github.com/genZadelio/AI-Tic-Tac-Toe" target="_blank" rel="noopener noreferrer" aria-label="View Tic Tac Toe UI source on GitHub (opens in a new tab)">Source ↗</a>
+          </div>
+        </article>
+
+        <article>
+          <div class="resume-item__heading">
+            <div><h3>Amazon Clone</h3><p>Responsive storefront interface demonstrating sticky navigation, a structured product grid, and modern visual hierarchy. The original repository now resolves to Gamazon.</p><span class="resume-project__meta">HTML5 · CSS3 · Responsive UI</span></div>
+            <a href="https://github.com/genZadelio/Amazon-Clone" target="_blank" rel="noopener noreferrer" aria-label="View Amazon Clone source on GitHub (opens in a new tab)">Source ↗</a>
+          </div>
+        </article>
+
+        <article>
+          <div class="resume-item__heading">
+            <div><h3>JS Chatbot</h3><p>Responsive educational chat interface that processes messages locally in the browser without an API call, external AI provider, or persistent chat history.</p><span class="resume-project__meta">HTML · CSS · JavaScript · Local only</span></div>
+            <div class="resume-project__links">
+              <a href="https://js-chatbot-adelio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the JS Chatbot live demo (opens in a new tab)">Live demo ↗</a>
+              <a href="https://github.com/genZadelio/JS-Chatbot" target="_blank" rel="noopener noreferrer" aria-label="View JS Chatbot source on GitHub (opens in a new tab)">Source ↗</a>
+            </div>
           </div>
         </article>
       </div>
@@ -111,12 +208,8 @@
 
     <footer class="resume-footer">
       <span>Approach. Code. Perform.</span>
-      <span>Updated <span id="resumeYear"></span></span>
+      <span>Updated Nov <span id="year">2026</span></span>
     </footer>
   </main>
-
-  <script>
-    document.getElementById('resumeYear').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
